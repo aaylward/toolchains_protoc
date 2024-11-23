@@ -29,7 +29,7 @@ def _prebuilt_protoc_repo_impl(rctx):
 
     filename = "{}-{}-{}.zip".format(
         "protoc",
-        release_version.removeprefix("v"),
+        release_version.removeprefix("v").replace("rc", "rc-"),
         rctx.attr.platform,
     )
     url = "https://github.com/protocolbuffers/protobuf/releases/download/{}/{}".format(
